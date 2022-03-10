@@ -5,3 +5,7 @@
 ## Documentations
 
 `cargo doc --open` generates documentation for all dependencies specified in Cargo.toml, and also your own code.
+
+## match
+
+`Err(_) => ...` - the underscore `_` is a catchall value; we're saying we want to match all `Err` values, no matter what information they have inside them
