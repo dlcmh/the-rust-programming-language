@@ -35,3 +35,7 @@ It's a primitive compound type that is a general way of grouping a number of val
 It's fixed in length once declared.
 
 [code sample](./tuples/src/main.rs)
+
+## The Array type
+
+The stack and the heap will be discussed in [Chapter 4. Understanding Ownership](../../04-understanding-ownership/).
