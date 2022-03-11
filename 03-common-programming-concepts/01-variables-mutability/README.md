@@ -1,4 +1,4 @@
-# Variables and Mutability
+# 3.1. Variables and Mutability
 
 By default, variables are immutable.
 
