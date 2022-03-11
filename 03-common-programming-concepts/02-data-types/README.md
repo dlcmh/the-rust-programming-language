@@ -38,37 +38,4 @@ It's fixed in length once declared.
 
 ## The Array type
 
-The stack and the heap will be discussed in [Chapter 4. Understanding Ownership](../../04-understanding-ownership/).
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, illum sunt, dicta beatae debitis labore exercitationem voluptatum at facere velit possimus eum. Deserunt, autem sint vero error veritatis laudantium asperiores?
+The stack and the heap will be discussed in [Chapter 4. Understanding Ownership](../../04-understanding-ownership/4-1-what-is-ownership/).
