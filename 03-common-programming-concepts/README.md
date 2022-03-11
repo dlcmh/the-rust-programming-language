@@ -20,3 +20,17 @@ Unlike variables, constants:
 ```rust
 const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 ```
+
+## Shadowing of variables
+
+```rust
+let x = 5; // (A)
+let x = x + 1; // (B)
+```
+
+The variable `x` in (A) is shadowed by `x` in (B).
+
+Shadowing is done by:
+
+- using the same variable name
+- repeating the use of the `let` keyword
