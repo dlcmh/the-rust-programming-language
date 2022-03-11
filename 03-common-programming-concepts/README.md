@@ -23,6 +23,11 @@ const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 
 ## Shadowing of variables
 
+Shadowing is done by:
+
+- using the same variable name
+- repeating the use of the `let` keyword
+
 ```rust
 let x = 5; // (A) - binds x to 5
 
@@ -30,6 +35,8 @@ let x = 5; // (A) - binds x to 5
 //   - shadows x by repeating `let x =`
 //   - x becomes 6 at the completion of the evaluation of this expression
 let x = x + 1;
+
+// The variable `x` in (A) is shadowed by `x` in (B).
 
 // begins an inner scope
 {
@@ -39,9 +46,22 @@ let x = x + 1;
 // (D) value of x remains at 6
 ```
 
-The variable `x` in (A) is shadowed by `x` in (B).
+Shadowing allows the reuse of a variable's name while performing transformations on a value.
 
-Shadowing is done by:
+Transformations can change the type of the value because a new variable gets effectively created with the use of the `let` keyword.
 
-- using the same variable name
-- repeating the use of the `let` keyword
+```rust
+let spaces = "     "; // string type
+let spaces = spaces.len(); // number type
+```
+
+The variable remains immutable after transformations.
+
+Changing the value type of a shadowed mutable variable without use of the `let` keyword isn't allowed.
+
+```rust
+let mut x = 10; // creates mutable variable x and binds it to 5
+x = 20; // allowed
+x = "30"; // not allowed
+let x = "30"; // allowed; also creates a new immutable variable named `x` with type of string
+```
