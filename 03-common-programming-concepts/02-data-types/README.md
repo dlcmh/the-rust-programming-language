@@ -38,4 +38,17 @@ It's fixed in length once declared.
 
 ## The Array type
 
-The stack and the heap will be discussed in [Chapter 4. Understanding Ownership](../../04-understanding-ownership/4-1-what-is-ownership/).
+Every array element must have the same type (unlike a tuple).
+
+Arrays are fixed in length.
+
+Arrays are useful if you want data allocated on the stack rather than the heap.
+
+- The stack and the heap will be discussed in [Chapter 4.1 What is Ownership?](../../04-understanding-ownership/4-1-what-is-ownership/).
+
+Useful to store, for example, the names of the months in a calendar year.
+
+A vector is a similar collection type provided by the standard library that can grow and shrink in size.
+
+- a vector is more flexible than an array
+- vectors are discussed in [8.1. Storing Lists of Values with Vectors](../../08-common-collections/8-1-vectors/).

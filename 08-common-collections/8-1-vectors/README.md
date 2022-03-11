@@ -1,4 +1,4 @@
-# 4.1. What is Ownership?
+# 8.1. Storing Lists of Values with Vectors
 
 Referenced in:
 
