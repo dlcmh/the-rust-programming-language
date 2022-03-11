@@ -24,8 +24,8 @@ const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 ## Shadowing of variables
 
 ```rust
-let x = 5; // (A)
-let x = x + 1; // (B)
+let x = 5; // (A) - binds x to 5
+let x = x + 1; // (B) - shadows x by repeating `let x =`; x becomes 6 at the completion of the evaluation of this expression
 ```
 
 The variable `x` in (A) is shadowed by `x` in (B).
