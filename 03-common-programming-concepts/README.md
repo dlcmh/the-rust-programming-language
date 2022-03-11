@@ -25,7 +25,18 @@ const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 
 ```rust
 let x = 5; // (A) - binds x to 5
-let x = x + 1; // (B) - shadows x by repeating `let x =`; x becomes 6 at the completion of the evaluation of this expression
+
+// (B)
+//   - shadows x by repeating `let x =`
+//   - x becomes 6 at the completion of the evaluation of this expression
+let x = x + 1;
+
+// begins an inner scope
+{
+  let x = x * 2; // (C) x is 12
+}
+
+// (D) value of x remains at 6
 ```
 
 The variable `x` in (A) is shadowed by `x` in (B).
