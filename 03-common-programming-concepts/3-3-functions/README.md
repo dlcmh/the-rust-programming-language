@@ -12,3 +12,5 @@ Rust is an expression-based language:
 
 - statements are instructions that perform some action and do not return a value
 - expressions evaluate to a resulting value
+
+[code sample](./functions/src/main.rs)

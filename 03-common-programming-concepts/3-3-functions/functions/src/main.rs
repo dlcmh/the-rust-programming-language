@@ -24,9 +24,16 @@ fn main() {
     //   is an example of an expression (because a value is returned).
     let z = {
         let x = 3;
+
+        // be careful not to write `x + 1;`, as the presence of a semicolon
+        // turns the scope block expression into a statement,
+        // which means the value 4 would not be returned
         x + 1
     };
     println!("z is {}", z); // z is 4
+
+    let p = add_one(10); // call a value-returning function
+    print!("p is {}", p); // p is 11
 }
 
 fn this_function() {}
@@ -65,3 +72,18 @@ fn those_functions(x: i32) {
 fn print_labeled_measurement(value: i32, unit_label: char) {
     println!("The measurement is: {}{}", value, unit_label);
 }
+
+// ## Functions that return values must have a type declared after `->`
+fn add_one(x: i32) -> i32 {
+    x + 1
+}
+
+// ## Example of a function that's supposed to return a value, but where
+//   the function body ends with a statement
+//   (due to the use of a semicolon `;`).
+//   Remember that `()` is the unit type.
+// fn less_one(x: i32) -> i32 {
+//     // mismatched types
+//     // expected `i32`, found `()`
+//     x - 1;
+// }
