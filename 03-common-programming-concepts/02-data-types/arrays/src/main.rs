@@ -54,6 +54,6 @@ fn main() {
     const LENGTH: usize = 9;
 
     let repeated_array = [nines; LENGTH];
-    println!("{} {}", LENGTH, nines);
-    println!("repeated_array {:?}", repeated_array);
+    println!("{} {}", LENGTH, nines); // 9 nines
+    println!("repeated_array {:?}", repeated_array); // repeated_array ["nines", "nines", "nines", "nines", "nines", "nines", "nines", "nines", "nines"]
 }
