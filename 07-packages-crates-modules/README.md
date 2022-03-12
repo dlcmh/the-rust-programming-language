@@ -3,7 +3,7 @@
 The module tree for the [restaurant library crate](./libs/restaurant/) is:
 
 ```
-src/lib.rs (this file is the "crate root" for the module named "crate")
+src/lib.rs (this file is the "crate root" for the implicit module named "crate")
  └── front_of_house (`mod`)
      ├── hosting (`mod`)
      │   ├── add_to_waitlist (`fn`)
@@ -13,3 +13,5 @@ src/lib.rs (this file is the "crate root" for the module named "crate")
          ├── serve_order (`fn`)
          └── take_payment (`fn`)
 ```
+
+Note that the entire module tree is rooted under the implicit module named "crate".
