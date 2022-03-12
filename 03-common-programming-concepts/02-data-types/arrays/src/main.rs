@@ -34,7 +34,11 @@ fn main() {
     let nines = "nines";
 
     // let length = 9;
-    // attempt to use a non-constant value in a constant rustc(E0435)
+    //     error[E0435]: attempt to use a non-constant value in a constant
+    //     --> src/main.rs:57:34
+    //      |
+    //      |     let length = 9;
+    //      |     ---------- help: consider using `const` instead of `let`: `const length`
 
     // const length = 9;
     // provide a type for the constant: `length: i32`
@@ -51,6 +55,7 @@ fn main() {
 
     // https://stackoverflow.com/questions/40259802/why-are-all-indexes-in-rust-of-type-usize
     // Slices only allow you to index them using usize, as do all container types that either pretend to be, or actually are, linear in memory. That's because usize is the correct type with which to index them. Any other type would either not be able to access the full potential range of the container, or would allow for indices that cannot possibly exist.
+
     const LENGTH: usize = 9;
 
     let repeated_array = [nines; LENGTH];
