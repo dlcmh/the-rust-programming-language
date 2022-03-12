@@ -1,4 +1,4 @@
-# 3.3 Functions
+# 3.3. Functions
 
 Function names conventionally use _snake case_.
 
