@@ -40,7 +40,7 @@ It's fixed in length once declared.
 
 Every array element must have the same type (unlike a tuple).
 
-Arrays are fixed in length.
+An array is a single chunk of memory of a known, fixed size (length).
 
 Arrays are useful if you want data allocated on the stack rather than the heap.
 
@@ -56,3 +56,4 @@ A vector is a similar collection type provided by the standard library that can 
 [code sample](./arrays/src/main.rs):
 
 - see comment on why the length of an array has to be a `const` of type `usize`
+- invalid element access causes the program to panic - [9. Error Handling](../../09-error-handling/) discusses error handling further
