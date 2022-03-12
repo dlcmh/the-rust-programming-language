@@ -53,4 +53,6 @@ A vector is a similar collection type provided by the standard library that can 
 - a vector is more flexible than an array
 - vectors are discussed in [8.1. Storing Lists of Values with Vectors](../../08-common-collections/8-1-vectors/).
 
-[code sample](./arrays/src/main.rs)
+[code sample](./arrays/src/main.rs):
+
+- see comment on why the length of an array has to be a `const` of type `usize`
