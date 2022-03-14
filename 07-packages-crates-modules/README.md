@@ -60,3 +60,17 @@ use std::io::Write;
 // write:
 use std::io{self, Write};
 ```
+
+## The Glob Operator, \*
+
+To bring in all public items defined in a path into scope:
+
+```rust
+use std::collections::*;
+```
+
+Be careful when using `*` as it makes it harder to tell what names are in scope and where a name was defined.
+
+`*` is often used when testing to bring everything under test into the `tests` module.
+
+See also the [prelude pattern in the standard library docs](https://doc.rust-lang.org/std/prelude/index.html#other-preludes).
