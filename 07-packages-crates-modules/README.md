@@ -42,3 +42,21 @@ Reasons for (A) & (B):
 ## External packages
 
 THe standard library (`std`) is shipped with the Rust language, hence isn't necessary to be included in Cargo.toml. But we do need to referto it with `use` to bring items from there into our package's scope, eg `use std::collections::HashMap;`.
+
+## Use Nested Paths to clean up large `use` lists
+
+```rust
+// (A) instead of:
+use std::cmp::Ordering;
+use std::io;
+
+// write:
+use std::{cmp::Ordering, io};
+
+// (B) instead of:
+use std::io;
+use std::io::Write;
+
+// write:
+use std::io{self, Write};
+```
