@@ -15,3 +15,26 @@ src/lib.rs (this file is the "crate root" for the implicit module named "crate")
 ```
 
 Note that the entire module tree is rooted under the implicit module named "crate".
+
+## Rust privacy
+
+All items are private by default:
+
+- functions
+- methods
+- structs
+- enums
+- modules
+- constants
+
+### Parent and child modules
+
+(A) Items in a parent module aren't allowed to access private items in child modules.
+
+(B) But items in child modules can use items in their ancestor modules.
+
+Reasons for (A) & (B):
+
+- allow child modules to wrap and hide their implementation details
+- allow child modules to see the context in which they're defined
+- allow programmer to know which parts of inner code can be changed without breaking outer code
