@@ -94,11 +94,16 @@ fn use_hash_map() {
 // (J)
 // Bringing two types with the same name into the same scope requires using
 // their parent modules.
-// use std::fmt; // NOT std::fmt::Result
-// use std::io; // NOT std::io::Result
+use std::fmt; // NOT std::fmt::Result
+use std::io; // NOT std::io::Result
 
 // fn function1() -> fmt::Result {}
 // fn function2() -> io::Result<()> {}
+
+// (K)
+// alternatively, choose a new name for one of the types:
+use std::io::Result as IoResult;
+// fn function3() -> IoResult<()> {}
 
 // referred to by fix_incorrect_order via `super`
 // use `super` if we think serve_order & back_of_house are likely to stay
