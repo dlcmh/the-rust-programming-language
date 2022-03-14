@@ -1,5 +1,7 @@
 # 7. Managing Growing Projects with Packages, Crates, and Modules
 
+[code sample](./libs/restaurant/src/lib.rs)
+
 The module tree for the [restaurant library crate](./libs/restaurant/) is:
 
 ```
