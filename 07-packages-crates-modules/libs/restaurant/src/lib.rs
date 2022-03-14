@@ -26,6 +26,9 @@ mod front_of_house {
 
         fn take_payment() {}
     }
+
+    pub mod maintenance {}
+    pub mod utilities {}
 }
 
 pub fn eat_at_restaurant() {
@@ -59,7 +62,7 @@ pub fn eat_at_restaurant() {
 // Bringing paths into scope with the `use` keyword
 // Any of (E), (F), (G) are acceptable ways:
 // (E)
-use crate::front_of_house::hosting;
+pub use crate::front_of_house::hosting;
 // (F)
 // use self::front_of_house::hosting;
 // (G)
@@ -104,6 +107,11 @@ use std::io; // NOT std::io::Result
 // alternatively, choose a new name for one of the types:
 use std::io::Result as IoResult;
 // fn function3() -> IoResult<()> {}
+
+// (L)
+// Re-exporting names with `pub use`
+pub use crate::front_of_house::maintenance;
+pub use crate::front_of_house::utilities as restaurant_utils; // rename with `as`
 
 // referred to by fix_incorrect_order via `super`
 // use `super` if we think serve_order & back_of_house are likely to stay
