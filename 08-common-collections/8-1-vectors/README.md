@@ -17,4 +17,4 @@ Useful for lists of items such as:
 
 ## Code samples
 
-[using an enum](./crates/use_an_enum/src/main.rs)
+[use an enum](./crates/use_an_enum/src/main.rs)
