@@ -76,3 +76,7 @@ Be careful when using `*` as it makes it harder to tell what names are in scope 
 `*` is often used when testing to bring everything under test into the `tests` module.
 
 See also the [prelude pattern in the standard library docs](https://doc.rust-lang.org/std/prelude/index.html#other-preludes).
+
+## Separating modules into different files
+
+[source code](./bins/restaurant_runner/src/)
