@@ -44,6 +44,16 @@ pub fn eat_at_restaurant() {
     // Change our mind about what bread we'd like
     meal.toast = String::from("Wheat");
     println!("I'd like {} toast please.", meal.toast); // I'd like Wheat toast please.
+
+    // field `seasonal_fruit` of struct `Breakfast` is private
+    // private field rustc(E0616)
+    // meal.seasonal_fruit = String::from("papaya");
+
+    // All variants of a public enum are public by default
+    let order1 = back_of_house::Appetizer::Soup;
+    let order2 = back_of_house::Appetizer::Salad;
+    println!("{:?}", order1); // Soup
+    println!("{:#?}", order2); // Salad
 }
 
 // referred to by fix_incorrect_order via `super`
@@ -61,17 +71,39 @@ mod back_of_house {
     fn cook_order() {}
 
     pub struct Breakfast {
+        // Struct fields are private by default, unless marked with `pub`
         pub toast: String,
         seasonal_fruit: String,
     }
 
     impl Breakfast {
+        // because the Breakfast struct has a private field, the struct needs
+        // to provide a public associated function that constructs an instance
+        // of Breakfast:
         pub fn summer(toast: &str) -> Breakfast {
             Breakfast {
                 toast: String::from(toast),
                 seasonal_fruit: String::from("peaches"),
             }
         }
+    }
+
+    // println! an enum requires:
+    #[derive(Debug)]
+    //     error[E0277]: `Appetizer` doesn't implement `Debug`
+    //     --> src/lib.rs:55:22
+    //      |
+    //   55 |     println!("{:?}", order1); // Soup
+    //      |                      ^^^^^^ `Appetizer` cannot be formatted using `{:?}`
+    //      |
+    //      = help: the trait `Debug` is not implemented for `Appetizer`
+    //      = note: add `#[derive(Debug)]` to `Appetizer` or manually `impl Debug for Appetizer`
+    //      = note: this error originates in the macro `$crate::format_args_nl` (in Nightly builds, run with -Z macro-backtrace for more info)
+    // unlike a struct, all of the variants of a public enum are public by
+    // default
+    pub enum Appetizer {
+        Soup,
+        Salad,
     }
 }
 
