@@ -1,6 +1,5 @@
 // eat_at_restaurant & front_of_house are siblings because both items are
 // defined in the same module. Each can access or refer to the other.
-
 mod front_of_house {
     // (A)
     // not accessible by eat_at_restaurant
@@ -35,6 +34,21 @@ pub fn eat_at_restaurant() {
 
     // Relative path
     front_of_house::hosting::add_to_waitlist();
+}
+
+// referred to by fix_incorrect_order via `super`
+// use `super` if we think serve_order & back_of_house are likely to stay
+// in the same relationship with each other and get moved together should
+// we decide to reorganize the crate's module tree
+fn serve_order() {}
+
+mod back_of_house {
+    fn fix_incorrect_order() {
+        cook_order();
+        super::serve_order();
+    }
+
+    fn cook_order() {}
 }
 
 #[cfg(test)]
