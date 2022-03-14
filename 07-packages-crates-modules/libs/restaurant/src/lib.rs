@@ -56,6 +56,50 @@ pub fn eat_at_restaurant() {
     println!("{:#?}", order2); // Salad
 }
 
+// Bringing paths into scope with the `use` keyword
+// Any of (E), (F), (G) are acceptable ways:
+// (E)
+use crate::front_of_house::hosting;
+// (F)
+// use self::front_of_house::hosting;
+// (G)
+// use front_of_house::hosting;
+
+// (H)
+// The idiomatic way of bringing a function into scope is to call
+// use crate::front_of_house::hosting followed by calling the
+// hosting::add_to_waitlist() the function, that is, to call the parent module
+// followed by  calling the function - this makes it clear that the function
+// isn't locally defined while still minimizing the repetition of the full path.
+pub fn dine_at_restaurant() {
+    // Absolute path
+    // crate::front_of_house::hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+
+    // Relative path
+    // front_of_house::hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+}
+
+// (I)
+// When bringing in structs and enums, it's idiomatic to specify the full path
+use std::collections::HashMap;
+
+fn use_hash_map() {
+    let mut map = HashMap::new();
+    map.insert(1, 2);
+    println!("{:?}", map); // {1: 2}
+}
+
+// (J)
+// Bringing two types with the same name into the same scope requires using
+// their parent modules.
+// use std::fmt; // NOT std::fmt::Result
+// use std::io; // NOT std::io::Result
+
+// fn function1() -> fmt::Result {}
+// fn function2() -> io::Result<()> {}
+
 // referred to by fix_incorrect_order via `super`
 // use `super` if we think serve_order & back_of_house are likely to stay
 // in the same relationship with each other and get moved together should
@@ -118,5 +162,10 @@ mod tests {
     #[test]
     fn eat_at_restaurant() {
         crate::eat_at_restaurant();
+    }
+
+    #[test]
+    fn use_hash_map() {
+        crate::use_hash_map();
     }
 }
