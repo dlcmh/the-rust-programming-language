@@ -38,3 +38,7 @@ Reasons for (A) & (B):
 - allow child modules to wrap and hide their implementation details
 - allow child modules to see the context in which they're defined
 - allow programmer to know which parts of inner code can be changed without breaking outer code
+
+## External packages
+
+THe standard library (`std`) is shipped with the Rust language, hence isn't necessary to be included in Cargo.toml. But we do need to referto it with `use` to bring items from there into our package's scope, eg `use std::collections::HashMap;`.
