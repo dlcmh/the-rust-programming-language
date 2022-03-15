@@ -1,6 +1,6 @@
 fn main() {
     // (A) create new, empty string which can be loaded with data
-    let mut s = String::new();
+    let s = String::new();
     println!("s is !{}!", s); // s is !!
 
     // (B)
