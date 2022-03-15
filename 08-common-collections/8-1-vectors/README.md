@@ -21,4 +21,6 @@ Useful for lists of items such as:
 
 [read elements](./crates/read_elements/src/main.rs)
 
+[iterating over values](./crates/iterating_over_values/src/main.rs)
+
 [use an enum](./crates/use_an_enum/src/main.rs)
