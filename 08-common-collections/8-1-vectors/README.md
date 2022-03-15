@@ -17,4 +17,6 @@ Useful for lists of items such as:
 
 ## Code samples
 
+[create, update, drop a vector](./crates/create_update_drop_vector/src/main.rs)
+
 [use an enum](./crates/use_an_enum/src/main.rs)
