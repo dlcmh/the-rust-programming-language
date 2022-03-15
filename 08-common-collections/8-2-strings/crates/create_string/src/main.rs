@@ -7,7 +7,7 @@ fn main() {
     // Start a string with some initial data with the `to_string` method, which
     // is available on any type that implements the `Display` trait, as string
     // literals do. `to_string` method creates a `String` from a string literal.
-    let data = "some text";
+    let data = "some text"; // data is of type &str, a borrowed string slice
     let s = data.to_string();
     println!("string literal data is !{}!", data); // string literal data is !some text!
     println!("s is !{}!", s); // s is !some text!

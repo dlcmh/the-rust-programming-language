@@ -29,3 +29,5 @@ Note that these names end in `String` or `Str`, which refer to owned and borrowe
 ## Code samples
 
 [create string](./crates/create_string/src/main.rs)
+
+[update string](./crates/update_string/src/main.rs)
