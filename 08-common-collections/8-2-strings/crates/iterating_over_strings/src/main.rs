@@ -46,7 +46,7 @@ fn main() {
         hindi_clusters.len()
     );
     // Count of clusters in नमस्ते is 4
-    // In Ruby irb:
+    // In Ruby irb (https://www.linkedin.com/pulse/grapheme-clusters-ruby-english-example-sourav-goswami/):
     // "नमस्ते".grapheme_clusters.length # => 4
 
     println!("{:?}", s_str1.bytes());
