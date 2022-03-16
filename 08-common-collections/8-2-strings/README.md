@@ -37,3 +37,5 @@ Note that these names end in `String` or `Str`, which refer to owned and borrowe
 [A `String` cannot be indexed by `{integer}`](./crates/cannot_index_string/src/main.rs)
 
 [Internal representation - a `String` is a wrapper over a `Vec<u8>`](./crates/string_wraps_vec_u8/src/main.rs)
+
+[Properly iterate over the characters](./crates/iterating_over_strings/src/main.rs)
