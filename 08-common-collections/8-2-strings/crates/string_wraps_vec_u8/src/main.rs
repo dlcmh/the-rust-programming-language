@@ -45,4 +45,29 @@ fn main() {
 
     println!("Bytes of {} are: {:?}", s, s.as_bytes());
     // Bytes of 大卫 are: [229, 164, 167, 229, 141, 171]
+
+    // slicing a `String`, `s`, using `[]` with a range
+    // println!("{}", s[0..3]);
+    // error[E0277]: the size for values of type `str` cannot be known at compilation time
+    //    --> src/main.rs:50:5
+    //     |
+    // 50  |     println!("{}", s[0..3]);
+    //     |     ^^^^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    //     |
+    //     = help: the trait `Sized` is not implemented for `str`
+    //
+    // Read [Why your first FizzBuzz implementation may not work - an article by Chris Morgan](https://chrismorgan.info/blog/rust-fizzbuzz/) on why Rust has 2 types of strings, unlike C#, Java, & Go (Golang) which have only 1.
+    //
+    // Rust’s model is somewhat different, not being a garbage collected language, being centred around its language-wide model of ownership, where each object is owned in one place at a time, though other places may safely borrow references to it.
+    //
+    // `String` is an owned type. That is, it has exclusive ownership of the contents of the string; and when it passes out of scope, the memory for the contents of the string will be freed immediately. For this reason, any substring can’t be of the type `String`, for there will be no connection between the two, and so when one passed out of scope, the other would become invalid, leading to a loss of memory safety. And so instead it is that slices (substrings) use a type which is a reference to the contents that something else owns - `​&str`. Rust, through its concept of lifetimes, is able to guarantee that no slice outlives the actual String, and so memory safety is ensured.
+    //
+
+    // slicing a `String`, `&s`, using `[]` with a range
+    println!("Sliced with [0..3]: {}", &s[0..3]);
+    // Sliced with [0..3]: 大
+
+    // Rust will panic if an entire character isn't indexed in a valid fashion
+    println!("Sliced with [0..1]: {}", &s[0..1]);
+    // thread 'main' panicked at 'byte index 1 is not a char boundary; it is inside '大' (bytes 0..3) of `大卫`', src/main.rs:63:41
 }

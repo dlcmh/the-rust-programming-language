@@ -1,5 +1,7 @@
 # 8.2. Storing UTF-8 encoded text with strings
 
+Read [Why your first FizzBuzz implementation may not work - an article by Chris Morgan](https://chrismorgan.info/blog/rust-fizzbuzz/) on why Rust has 2 types of strings, unlike C#, Java, & Go (Golang) which have only 1.
+
 Strings are:
 
 - implemented as a collection of bytes,
