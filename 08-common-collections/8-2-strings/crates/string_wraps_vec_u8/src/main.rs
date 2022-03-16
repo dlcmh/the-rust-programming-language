@@ -26,10 +26,13 @@ fn main() {
     // Length of З in bytes is 2
 
     // When encoded in UTF-8, the first byte of З is 208 and the second is 151.
+
     // in Ruby `irb`:
     // "З".each_byte.to_a: # => [208, 151]
     // "大".each_byte.to_a # => [229, 164, 167]
 
+    // In Rust, using `as_bytes` method (pub fn as_bytes(&self) -> &[u8]),
+    // which returns a byte slice of a `String`'s contents.
     println!("Bytes of {} are: {:?}", s, s.as_bytes());
     // Bytes of З are: [208, 151]
 
