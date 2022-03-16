@@ -32,7 +32,9 @@ fn main() {
     // "大".each_byte.to_a # => [229, 164, 167]
 
     // In Rust, using `as_bytes` method (pub fn as_bytes(&self) -> &[u8]),
-    // which returns a byte slice of a `String`'s contents.
+    // which returns a byte slice of:
+    // - a `String`'s contents, or
+    // - a string slice's contents
     println!("Bytes of {} are: {:?}", s, s.as_bytes());
     // Bytes of З are: [208, 151]
 
