@@ -7,7 +7,10 @@ enum Coin {
 
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
-        Coin::Penny => 1,
+        Coin::Penny => {
+            println!("Lucky penny!");
+            1
+        }
         Coin::Nickel => 5,
         Coin::Dime => 10,
         Coin::Quarter => 25,
@@ -19,6 +22,7 @@ fn main() {
     println!("{}", value_in_cents(Coin::Nickel));
     println!("{}", value_in_cents(Coin::Dime));
     println!("{}", value_in_cents(Coin::Quarter));
+    // Lucky penny!
     // 1
     // 5
     // 10
