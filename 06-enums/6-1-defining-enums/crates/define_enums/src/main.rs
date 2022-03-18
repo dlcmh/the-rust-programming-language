@@ -74,12 +74,10 @@ fn main() {
             println!("&self is {:?}", &self);
 
             match &self {
-                Message::Quit => {}
                 Message::Move { x, y } => {
                     println!("x: {}, y: {}", x, y) // x: 600, y: 800
                 }
-                Message::Write(_) => {}
-                Message::ChangeColor(_, _, _) => {}
+                _ => {}
             }
         }
     }
