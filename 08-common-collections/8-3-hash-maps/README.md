@@ -13,3 +13,5 @@ Named as hash, map, object, hash table, dictionary, associative array, etc in ot
 [create hash maps](./crates/create_hash_map/src/main.rs)
 
 [hash maps and ownserhip](./crates/hash_maps_and_ownership/src/main.rs)
+
+[access hash map values](./crates/access_hash_map_values/src/main.rs)
