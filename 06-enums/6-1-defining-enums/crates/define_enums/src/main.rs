@@ -75,7 +75,7 @@ fn main() {
 
             match &self {
                 Message::Move { x, y } => {
-                    println!("x: {}, y: {}", x, y) // x: 600, y: 800
+                    println!("Move x: {}, y: {}", x, y) // [1]
                 }
                 _ => {}
             }
@@ -83,10 +83,16 @@ fn main() {
     }
     let m = Message::Quit;
     m.call(); // &self is Quit
+
     let m = Message::Write(String::from("hello"));
     m.call(); // &self is Write("hello")
+
     let m = Message::Move { x: 600, y: 800 };
-    m.call(); // &self is Move { x: 600, y: 800 }
+    m.call();
+    // &self is Move { x: 600, y: 800 }
+    // [1]:
+    // Move x: 600, y: 800
+
     let m = Message::ChangeColor(1, 2, 3);
     m.call(); // &self is ChangeColor(1, 2, 3)
 }
