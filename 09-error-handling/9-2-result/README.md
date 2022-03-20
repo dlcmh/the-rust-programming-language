@@ -20,3 +20,5 @@ fn main() {
 [open a file](./crates/open_file/src/main.rs)
 
 [match on different errors with `ErrorKind`](./crates/match_on_error_kind/src/main.rs)
+
+[unwrap vs expect](./crates/unwrap_expect/src/main.rs)
