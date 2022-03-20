@@ -18,3 +18,5 @@ fn main() {
 ## Code samples
 
 [open a file](./crates/open_file/src/main.rs)
+
+[match on different errors with `ErrorKind`](./crates/match_on_error_kind/src/main.rs)
