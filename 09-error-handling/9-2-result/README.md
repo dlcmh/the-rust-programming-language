@@ -14,3 +14,7 @@ fn main() {
     }
 }
 ```
+
+## Code samples
+
+[open a file](./crates/open_file/src/main.rs)
