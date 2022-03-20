@@ -1,5 +1,5 @@
 use std::{
-    fs::File,
+    fs::{read_to_string, File},
     io::{Error, Read},
 };
 
@@ -42,8 +42,14 @@ fn read_file_c() -> Result<String, Error> {
     Ok(s)
 }
 
+// (D) use convenience helper function `fs::read_to_string` to shorten (D) further
+fn read_file_d() -> Result<String, Error> {
+    read_to_string("d.txt")
+}
+
 fn main() {
     println!("{}", read_file_a().unwrap()); // Hello, A!
     println!("{}", read_file_b().unwrap()); // Hello, B!
     println!("{}", read_file_c().unwrap()); // Hello, C!
+    println!("{}", read_file_d().unwrap()); // Hello, D!
 }
