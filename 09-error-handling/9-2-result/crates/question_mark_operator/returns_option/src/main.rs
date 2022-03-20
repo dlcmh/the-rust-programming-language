@@ -10,7 +10,7 @@ fn text_a(text: &str) -> Option<char> {
 fn main() {
     // println!("{}", text_a("Hello\n and the World!").unwrap()); // o
 
-    println!("{}", text_a("\n and the World!").unwrap());
+    println!("{:?}", text_a("\n and the World!"));
     // thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src/main.rs:12:48
     // note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 }
