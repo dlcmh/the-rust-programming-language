@@ -8,11 +8,14 @@ use std::{
 // type of error value returned from ALL operations being called in the body,
 // `File::open` & `read_to_string` method.
 fn read_file_a() -> Result<String, Error> {
+    // op #1
     let f = File::open("a.txt");
     let mut f = match f {
         Ok(file) => file,
         Err(e) => return Err(e), // return early with error
     };
+
+    // op #2
     let mut s = String::new();
     match f.read_to_string(&mut s) {
         Ok(_) => Ok(s),
@@ -20,7 +23,20 @@ fn read_file_a() -> Result<String, Error> {
     }
 }
 
+// (B) `?` operator makes (A) easier
+// error values that have `?` called on them gets converted with the `from` function
+// into the return type of the function; this can happen as long as there's an
+// `impl From<OtherError> for ReturnedError` to define the conversion in the trait's
+// `from` function.
+fn read_file_b() -> Result<String, Error> {
+    let mut f = File::open("b.txt")?;
+    let mut s = String::new();
+    f.read_to_string(&mut s)?;
+    Ok(s)
+}
+
 fn main() {
-    println!("{}", read_file_a().unwrap());
-    // Hello, A!
+    println!("{}", read_file_a().unwrap()); // Hello, A!
+
+    println!("{}", read_file_b().unwrap()); // Hello, B!
 }
