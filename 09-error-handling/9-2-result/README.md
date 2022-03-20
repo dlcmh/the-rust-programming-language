@@ -24,3 +24,5 @@ fn main() {
 [unwrap vs expect - both call `panic!` macro on error](./crates/unwrap_expect/src/main.rs)
 
 [propagate error back to caller](./crates/propagate_error/src/main.rs)
+
+[`?` fails on `main`](./crates/question_mark_operator/fails_on_main/src/main.rs)
