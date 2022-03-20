@@ -26,3 +26,5 @@ fn main() {
 [propagate error back to caller](./crates/propagate_error/src/main.rs)
 
 [`?` fails on `main`](./crates/question_mark_operator/fails_on_main/src/main.rs)
+
+[`?` on `main` with `Box<dyn Error>` return type](./crates/question_mark_operator/ok_on_main/src/main.rs)
