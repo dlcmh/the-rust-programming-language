@@ -21,4 +21,4 @@ fn main() {
 
 [match on different errors with `ErrorKind`](./crates/match_on_error_kind/src/main.rs)
 
-[unwrap vs expect](./crates/unwrap_expect/src/main.rs)
+[unwrap vs expect - both call `panic!` macro on error](./crates/unwrap_expect/src/main.rs)
