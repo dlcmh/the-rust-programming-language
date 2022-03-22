@@ -2,7 +2,7 @@
 
 Generics can be used to define:
 
-- functions
+- [functions](./crates/generics_in_functions/src/main.rs)
   - generics are placed in the signature of the function - where data types of parameters and the return value are specified
 - structs
 - enums
