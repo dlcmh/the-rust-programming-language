@@ -31,20 +31,23 @@ fn largest_char(list: &[char]) -> char {
 // (C)
 // `T` in `largest<T>` is the name of the type parameter, which needs to be
 // declared this way, inside angle brackets `<>`, before being used.
+// Read as: the function `largest` is generic over some type `T`. This function
+// has one parameter named `list`, which is a slice of values of type `T`. The
+// function will return a value of the same type `T`.
 //
 // Error #1:
 // - `std::cmp::PartialOrd` is a trait
 // error[E0369]: binary operation `>` cannot be applied to type `T`
-//   --> src/main.rs:53:17
+//   --> src/main.rs:57:17
 //    |
-// 53 |         if item > largest {
+// 57 |         if item > largest {
 //    |            ---- ^ ------- &T
 //    |            |
 //    |            T
 //    |
 // help: consider restricting type parameter `T`
 //    |
-// 49 | fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> T {
+// 52 | fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> T {
 //    |             ++++++++++++++++++++++
 fn largest<T>(list: &[T]) -> T {
     let mut largest = &list[0];
