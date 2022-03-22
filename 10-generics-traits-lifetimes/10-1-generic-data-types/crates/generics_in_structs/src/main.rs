@@ -9,7 +9,7 @@ struct Point<T> {
     y: T,
 }
 
-// (B) use multiple generic type parame
+// (B) use multiple generic type parameters
 #[derive(Debug)]
 struct Coordinates<T, U> {
     x: T,
