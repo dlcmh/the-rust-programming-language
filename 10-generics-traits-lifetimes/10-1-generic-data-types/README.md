@@ -6,6 +6,6 @@ Generics can be used to define:
   - generics are placed in the signature of the function - where data types of parameters and the return value are specified
 - [structs](./crates/generics_in_structs/src/main.rs)
 - [enums](./crates/generics_in_enums/src/main.rs)
-- methods
+- [methods](./crates/generics_in_methods/src/main.rs)
 
 How generics affect code performance.
