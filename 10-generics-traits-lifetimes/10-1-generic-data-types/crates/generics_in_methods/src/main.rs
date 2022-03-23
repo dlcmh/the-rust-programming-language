@@ -35,11 +35,14 @@ struct Pt<X1, Y1> {
     x: X1,
     y: Y1,
 }
-impl<X1, Y1> Pt<X1, Y1> {
-    fn mixup<X2, Y2>(&self, other: Pt<X2, Y2>) -> Pt<X1, Y2> {
+// Need to use the `Clone` trait & `clone` method:
+// - rust - Cannot move out of borrowed content / cannot move out of behind a shared reference - Stack Overflow
+// - https://stackoverflow.com/questions/28158738/cannot-move-out-of-borrowed-content-cannot-move-out-of-behind-a-shared-referen/28159407#28159407
+impl<X1: Clone, Y1: Clone> Pt<X1, Y1> {
+    fn into_mixup<X2: Clone, Y2: Clone>(&self, other: &Pt<X2, Y2>) -> Pt<X1, Y2> {
         Pt {
-            x: self.clone().x,
-            y: other.y,
+            x: self.x.clone(),
+            y: other.y.clone(),
         }
     }
 }
@@ -76,6 +79,6 @@ fn main() {
     // (C)
     let p1 = Pt { x: 9, y: 10 };
     let p2 = Pt { x: "Hello", y: 'c' };
-    let p3 = p1.mixup(p2);
+    let p3 = p1.into_mixup(&p2);
     println!("{:?} mixed with {:?} becomes: {:?}", p1, p2, p3);
 }
