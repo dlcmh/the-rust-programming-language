@@ -30,6 +30,14 @@ fn main() {
     // त
     // \u{947} े
 
+    // `::<SomeType>` in `collect::<Vec<&str>>` is known as a "turbofish".
+    // https://techblog.tonsser.com/posts/what-is-rusts-turbofish
+    // It means "collect this iterator into a `Vec<&str>`".
+    //
+    // Without the turbofish, the compiler wouldn't know what type, `Vec`, `HashMap`, `HashSet`,
+    // or something else that implements the [`FromIterator` trait](https://doc.rust-lang.org/std/iter/trait.FromIterator.html), that the iterator should be `collect`ed into.
+    //
+    // We could also replace `&str` with `_` and let the compiler infer it, `Vec<_>`.
     let hindi_clusters = hindi_str.graphemes(true).collect::<Vec<&str>>();
     println!("{:?}", hindi_clusters);
     // ["न", "म", "स\u{94d}", "त\u{947}"]
