@@ -9,8 +9,7 @@ struct Point<T> {
 //
 // (A) - unconstrained generic type `T`
 // - methods defined within such an `impl` will be defined on __any__ instance of the type,
-//   regardless of what concrete type ends up substituting for the generic type. In contrast,
-//   see (B).
+//   regardless of what concrete type ends up substituting for the generic type. In contrast, see (B).
 // For the `<T>` declaration, any other letter could have been used, eg `<U>`, etc.
 impl<T> Point<T> {
     fn x(&self) -> &T {
@@ -27,6 +26,21 @@ impl<T> Point<T> {
 impl Point<f32> {
     fn distance_from_origin(&self) -> f32 {
         (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
+}
+
+// (C) Example of generics on an `impl` vs those on a method (the `fn` inside an `impl`)
+#[derive(Debug)]
+struct Pt<X1, Y1> {
+    x: X1,
+    y: Y1,
+}
+impl<X1, Y1> Pt<X1, Y1> {
+    fn mixup<X2, Y2>(&self, other: Pt<X2, Y2>) -> Pt<X1, Y2> {
+        Pt {
+            x: self.clone().x,
+            y: other.y,
+        }
     }
 }
 
@@ -54,7 +68,14 @@ fn main() {
     println!("p.x = {}", p.x());
     // p.x = 5
 
+    // (B)
     let p = Point { x: 3_f32, y: 4_f32 };
     println!("distance_from_origin: {}", p.distance_from_origin());
     // distance_from_origin: 5
+
+    // (C)
+    let p1 = Pt { x: 9, y: 10 };
+    let p2 = Pt { x: "Hello", y: 'c' };
+    let p3 = p1.mixup(p2);
+    println!("{:?} mixed with {:?} becomes: {:?}", p1, p2, p3);
 }
