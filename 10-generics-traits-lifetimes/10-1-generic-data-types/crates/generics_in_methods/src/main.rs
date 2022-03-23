@@ -20,6 +20,10 @@ impl<T> Point<T> {
 //
 // (B) - define methods on the `Point<T>` type with some constraint on the generic type,
 //   eg by implementing methods only on `Point<f32>` instances.
+//
+// Measure how far the point is from the point at coordinates(0.0, 0.0):
+// - uses a mathematical operation, `powi`, that is available only to floating
+//   point types
 impl Point<f32> {
     fn distance_from_origin(&self) -> f32 {
         (self.x.powi(2) + self.y.powi(2)).sqrt()
