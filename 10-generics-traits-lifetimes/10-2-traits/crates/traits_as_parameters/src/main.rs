@@ -93,9 +93,9 @@ fn main() {
 
     // f4(&item, &element);
     //     error[E0308]: mismatched types
-    //     --> src/main.rs:80:15
+    //     --> src/main.rs:94:15
     //      |
-    //   80 |     f4(&item, &element);
+    //   94 |     f4(&item, &element);
     //      |               ^^^^^^^^ expected struct `Item`, found struct `Element`
     //      |
     //      = note: expected reference `&Item`
@@ -108,29 +108,29 @@ fn main() {
 
     // f5(&element);
     //     error[E0277]: `Element` doesn't implement `std::fmt::Display`
-    //     --> src/main.rs:95:8
-    //      |
-    //   95 |     f5(&element);
-    //      |     -- ^^^^^^^^ `Element` cannot be formatted with the default formatter
-    //      |     |
-    //      |     required by a bound introduced by this call
-    //      |
-    //      = help: the trait `std::fmt::Display` is not implemented for `Element`
-    //      = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
-    //   note: required by a bound in `f5`
-    //     --> src/main.rs:53:24
-    //      |
-    //   53 | pub fn f5(item: &(impl Display + Summary)) {
-    //      |                        ^^^^^^^ required by this bound in `f5`
+    //     --> src/main.rs:109:8
+    //       |
+    //   109 |     f5(&element);
+    //       |     -- ^^^^^^^^ `Element` cannot be formatted with the default formatter
+    //       |     |
+    //       |     required by a bound introduced by this call
+    //       |
+    //       = help: the trait `std::fmt::Display` is not implemented for `Element`
+    //       = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+    //    note: required by a bound in `f5`
+    //      --> src/main.rs:53:24
+    //       |
+    //    53 | pub fn f5(item: &(impl Display + Summary)) {
+    //       |                        ^^^^^^^ required by this bound in `f5`
 
     f5(&item);
     // f5: <Item: item> / <twice now: (item, item)>
 
     // f6(&element);
     //     error[E0277]: `Element` doesn't implement `std::fmt::Display`
-    //     --> src/main.rs:115:8
+    //     --> src/main.rs:129:8
     //      |
-    //  115 |     f6(&element);
+    //  129 |     f6(&element);
     //      |     -- ^^^^^^^^ `Element` cannot be formatted with the default formatter
     //      |     |
     //      |     required by a bound introduced by this call
@@ -147,4 +147,5 @@ fn main() {
     // f6: <Item: item> / <twice now: (item, item)>
 
     f7(&item, &element);
+    // f7: <Item: item> / <twice now: (item, item)> || <Element: element>
 }
