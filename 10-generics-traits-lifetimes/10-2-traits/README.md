@@ -7,3 +7,5 @@
 [implement trait on type](./crates/implement_trait/src/main.rs)
 
 [default implementations](./crates/default_implementations/src/main.rs)
+
+[traits as parameters](./crates/traits_as_parameters/src/main.rs)
