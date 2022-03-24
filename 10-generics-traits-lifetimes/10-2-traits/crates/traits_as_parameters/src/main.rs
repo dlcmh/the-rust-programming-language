@@ -48,16 +48,30 @@ pub fn f4<T: Summary>(item1: &T, item2: &T) {
     println!("f4: {}, {}", item1.summarize(), item2.summarize())
 }
 
-// (E-1) multiple trait bounds with `+`
+// (E-1) - multiple trait bounds with `+`
 // - `item` must implement both `Display` & `Summary`
 pub fn f5(item: &(impl Display + Summary)) {
     println!("f5: {} / <{}>", item.summarize(), item)
 }
 
-// (E-2) multiple trait bounds with `+`
+// (E-2) - multiple trait bounds with `+`
 // - also valid with trait bounds on generic types
 pub fn f6<T: Summary + Display>(item: &T) {
     println!("f6: {} / <{}>", item.summarize(), item)
+}
+
+// (F) - clearer trait bounds with `where` clauses
+pub fn f7<T, U>(item1: &T, item2: &U)
+where
+    T: Display + Summary,
+    U: Summary,
+{
+    println!(
+        "f7: {} / <{}> || {}",
+        item1.summarize(),
+        item1,
+        item2.summarize()
+    )
 }
 
 fn main() {
@@ -131,4 +145,6 @@ fn main() {
 
     f6(&item);
     // f6: <Item: item> / <twice now: (item, item)>
+
+    f7(&item, &element);
 }
