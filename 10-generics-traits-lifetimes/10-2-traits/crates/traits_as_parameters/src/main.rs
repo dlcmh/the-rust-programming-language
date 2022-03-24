@@ -1,8 +1,16 @@
+use std::fmt::{self, Display};
+
 pub trait Summary {
     fn summarize(&self) -> String;
 }
 pub struct Item {
     pub name: String,
+}
+impl Display for Item {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let name = &self.name;
+        write!(f, "twice now: ({name}, {name})")
+    }
 }
 impl Summary for Item {
     fn summarize(&self) -> String {
@@ -21,23 +29,35 @@ impl Summary for Element {
 // (A) - `impl Trait` syntax
 // - `item` parameter accepts any type that implements the `Summary` trait
 // - syntax sugar for (B)
-fn f1(item: &impl Summary) {
+pub fn f1(item: &impl Summary) {
     println!("f1: {}", item.summarize());
 }
 
 // (B) - Trait bound syntax
-fn f2<T: Summary>(item: &T) {
+pub fn f2<T: Summary>(item: &T) {
     println!("f2: {}", item.summarize());
 }
 
 // (C) - `item1` & `item2` must both implement `Summary`, but could have different types
-fn f3(item1: &impl Summary, item2: &impl Summary) {
+pub fn f3(item1: &impl Summary, item2: &impl Summary) {
     println!("f3: {}, {}", item1.summarize(), item2.summarize())
 }
 
 // (D) - use trait bound to enforce both items to have the same type
-fn f4<T: Summary>(item1: &T, item2: &T) {
+pub fn f4<T: Summary>(item1: &T, item2: &T) {
     println!("f4: {}, {}", item1.summarize(), item2.summarize())
+}
+
+// (E-1) multiple trait bounds with `+`
+// - `item` must implement both `Display` & `Summary`
+pub fn f5(item: &(impl Display + Summary)) {
+    println!("f5: {} / <{}>", item.summarize(), item)
+}
+
+// (E-2) multiple trait bounds with `+`
+// - also valid with trait bounds on generic types
+pub fn f6<T: Summary + Display>(item: &T) {
+    println!("f6: {} / <{}>", item.summarize(), item)
 }
 
 fn main() {
@@ -59,9 +79,9 @@ fn main() {
 
     // f4(&item, &element);
     //     error[E0308]: mismatched types
-    //     --> src/main.rs:60:15
+    //     --> src/main.rs:80:15
     //      |
-    //   60 |     f4(&item, &element);
+    //   80 |     f4(&item, &element);
     //      |               ^^^^^^^^ expected struct `Item`, found struct `Element`
     //      |
     //      = note: expected reference `&Item`
@@ -71,4 +91,44 @@ fn main() {
     // f4: <Item: item>, <Item: item>
     f4(&element, &element);
     // f4: <Element: element>, <Element: element>
+
+    // f5(&element);
+    //     error[E0277]: `Element` doesn't implement `std::fmt::Display`
+    //     --> src/main.rs:95:8
+    //      |
+    //   95 |     f5(&element);
+    //      |     -- ^^^^^^^^ `Element` cannot be formatted with the default formatter
+    //      |     |
+    //      |     required by a bound introduced by this call
+    //      |
+    //      = help: the trait `std::fmt::Display` is not implemented for `Element`
+    //      = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+    //   note: required by a bound in `f5`
+    //     --> src/main.rs:53:24
+    //      |
+    //   53 | pub fn f5(item: &(impl Display + Summary)) {
+    //      |                        ^^^^^^^ required by this bound in `f5`
+
+    f5(&item);
+    // f5: <Item: item> / <twice now: (item, item)>
+
+    // f6(&element);
+    //     error[E0277]: `Element` doesn't implement `std::fmt::Display`
+    //     --> src/main.rs:115:8
+    //      |
+    //  115 |     f6(&element);
+    //      |     -- ^^^^^^^^ `Element` cannot be formatted with the default formatter
+    //      |     |
+    //      |     required by a bound introduced by this call
+    //      |
+    //      = help: the trait `std::fmt::Display` is not implemented for `Element`
+    //      = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+    //  note: required by a bound in `f6`
+    //     --> src/main.rs:59:24
+    //      |
+    //  59  | pub fn f6<T: Summary + Display>(item: &T) {
+    //      |                        ^^^^^^^ required by this bound in `f6`
+
+    f6(&item);
+    // f6: <Item: item> / <twice now: (item, item)>
 }
