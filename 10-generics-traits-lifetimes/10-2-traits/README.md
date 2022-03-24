@@ -9,3 +9,5 @@
 [default implementations](./crates/default_implementations/src/main.rs)
 
 [traits as parameters](./crates/traits_as_parameters/src/main.rs)
+
+[return types that implement traits](./crates/return_types_that_implement_traits/src/main.rs)
