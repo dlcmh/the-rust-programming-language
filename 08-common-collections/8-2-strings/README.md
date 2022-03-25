@@ -13,7 +13,7 @@ Rust has only one string type in the core language, which is the string slice `s
 
 String slices are references to some UTF-8 encoded string data stored elsewhere.
 
-String literals, for example, are stored in the program's binary and are therefore string slices.
+String literals, for example, are stored in the program's binary ([see also](../../10-generics-traits-lifetimes/10-3-lifetimes/README.md#the-static-lifetime)) and are therefore string slices.
 
 ### The `String` type in the standard library
 
