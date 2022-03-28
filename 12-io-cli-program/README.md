@@ -24,3 +24,5 @@ A `grep` (globally search a regular expression and print) tool.
 [minigrep after handling errors from run function](./02-after-refactor/06-handle-run-errors/minigrep/)
 
 [minigrep after extracting to lib.rs](./02-after-refactor/07-extract-to-lib-rs/minigrep/)
+
+[TDD: test-driven development of the `search` function](./03-test-driven-development/minigrep/)
