@@ -4,7 +4,7 @@ A `grep` (globally search a regular expression and print) tool.
 
 ## Sample code
 
-[minigrep](./minigrep/)
+[minigrep before refactor](./01-before-refactor/minigrep/)
 
 - `std::env::args`
   - returns an iterator of command line args
