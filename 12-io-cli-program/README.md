@@ -25,4 +25,6 @@ A `grep` (globally search a regular expression and print) tool.
 
 [minigrep after extracting to lib.rs](./02-after-refactor/07-extract-to-lib-rs/minigrep/)
 
-[TDD: test-driven development of the `search` function](./03-test-driven-development/minigrep/)
+[TDD: test-driven development of the `search` function](./03-test-driven-development/01-single-lib-rs/minigrep/)
+
+[refactor into multiple module files](./03-test-driven-development/02-multiple-module-files/minigrep/)
