@@ -20,3 +20,5 @@ A `grep` (globally search a regular expression and print) tool.
 [minigrep after fixes to error handling](./02-after-refactor/04-fix-error-handling/minigrep/)
 
 [minigrep after extracting run function](./02-after-refactor/05-extract-to-run/)
+
+[minigrep after handling errors from run function](./02-after-refactor/05-extract-to-run/)
