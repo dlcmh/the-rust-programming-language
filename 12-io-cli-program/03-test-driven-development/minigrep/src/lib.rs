@@ -18,8 +18,19 @@ impl Config {
     }
 }
 
+// cargo run -q frog ../../poem.txt
+// How public, like a frog
+//
+// cargo run -q body ../../poem.txt
+// I'm nobody! Who are you?
+// Are you nobody, too?
+// How dreary to be somebody!
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.filename)?;
+
+    for line in search(&config.query, &contents) {
+        println!("{}", line)
+    }
 
     Ok(())
 }
@@ -33,7 +44,13 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 // ...this function's return type contains a borrowed value,
 // but the signature does not say whether it is borrowed from `query` or `contents`
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    vec![]
+    let mut results = Vec::new();
+    for line in contents.lines() {
+        if line.contains(query) {
+            results.push(line);
+        }
+    }
+    results
 }
 
 #[cfg(test)]
@@ -47,7 +64,7 @@ mod tests {
         // of the contents of this string literal
         let contents = "\
 Rust:
-safe, fast productive.
+safe, fast, productive.
 Pick three.";
 
         assert_eq!(vec!["safe, fast, productive."], search(query, contents));
