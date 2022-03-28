@@ -10,3 +10,7 @@ A `grep` (globally search a regular expression and print) tool.
   - returns an iterator of command line args
   - will `panic` if args contain invalid Unicode
   - use `std::env::args_os` - that returns an iterator over `OsString` to work with args that contain invalid Unicode
+
+[minigrep after extracting argument parser](./02-after-refactor/01-extract-arg-parser/minigrep/)
+
+[minigrep after `Config` struct](./02-after-refactor/01-extract-arg-parser/minigrep/)
