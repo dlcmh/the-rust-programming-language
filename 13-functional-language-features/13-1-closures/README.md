@@ -8,3 +8,4 @@ Closures:
 - can capture values from the scope in which they're defined (unlike functions)
 - allow for code reuse
 - allow for behavior customisation
+- need to be called at least once for the compiler to infer the types of their parameters & return value, if no arguments from the outer scope are passed into the definition

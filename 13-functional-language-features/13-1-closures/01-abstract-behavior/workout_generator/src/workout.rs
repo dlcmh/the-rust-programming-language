@@ -7,8 +7,8 @@ fn simulated_expensive_calculation(intensity: u32) -> u32 {
 }
 
 // Iteration #3: Define a closure, and store this definition in a variable so that it can be called later.
-// This pattern seems similar to memoization - the first time `expensive_clousure` is called.
-// the result is stored inside the variable itself.
+// This reintroduces the problem of the expensive calculation bein executed multiple times.
+// The solution will be presented in the next crate in this series.
 pub fn generate_workout(intensity: u32, random_number: u32) {
     let expensive_closure = |num| simulated_expensive_calculation(num);
 
