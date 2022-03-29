@@ -9,3 +9,9 @@ Closures:
 - allow for code reuse
 - allow for behavior customisation
 - need to be called at least once for the compiler to infer the types of their parameters & return value, if no arguments from the outer scope are passed into the definition
+
+## Sample code
+
+[Naively call expensive function multiple times as needed](./01-abstract-behavior/workout_generator/src/workout.rs)
+
+[Lazy evaluation / lazily evaluate / memoization / memo / cache / caching implementation with a `Cacher` struct](./02-memoization-with-struct/workout_generator/src/)
