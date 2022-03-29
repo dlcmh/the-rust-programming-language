@@ -9,12 +9,7 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
 }
 
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    // - `to_lowercase` creates new data rather than referencing existing data
-    // - eg `query` contains the string slice `"rUsT"`
-    // - a new `String` is allocated to contain `"rust"`
-    // - new `String` is stored in a shadowed variable with the same name, `query`
     let query = query.to_lowercase();
-
     let mut results = Vec::new();
     for line in contents.lines() {
         if line.to_lowercase().contains(&query) {
