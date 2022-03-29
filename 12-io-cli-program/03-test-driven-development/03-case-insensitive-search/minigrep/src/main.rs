@@ -9,6 +9,11 @@ use minigrep::Config;
 // I'm nobody! Who are you?
 // Are you nobody, too?
 // How dreary to be somebody!
+//
+// CASE_INSENSITIVE=1 cargo run -q bODy ../../../poem.txt
+// I'm nobody! Who are you?
+// Are you nobody, too?
+// How dreary to be somebody!
 fn main() {
     let args: Vec<String> = env::args().collect();
 
