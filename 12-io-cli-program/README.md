@@ -28,3 +28,5 @@ A `grep` (globally search a regular expression and print) tool.
 [TDD: test-driven development of the `search` function](./03-test-driven-development/01-single-lib-rs/minigrep/)
 
 [refactor into multiple module files](./03-test-driven-development/02-multiple-module-files/minigrep/)
+
+[case-insensitive search with environment variables (env var, env vars)](./03-test-driven-development/03-case-insensitive-search/minigrep/)
