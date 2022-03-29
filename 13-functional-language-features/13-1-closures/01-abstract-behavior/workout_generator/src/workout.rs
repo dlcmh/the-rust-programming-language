@@ -21,7 +21,7 @@ pub fn generate_workout(intensity: u32, random_number: u32) {
             println!("Take a break today! Remeber to stay hydrated!");
         } else {
             println!(
-                "Today, run for {} minutes",
+                "Today, run for {} minutes!",
                 simulated_expensive_calculation(intensity)
             );
         }
