@@ -14,4 +14,4 @@ Closures:
 
 [Naively call expensive function multiple times as needed](./01-abstract-behavior/workout_generator/src/workout.rs)
 
-[Lazy evaluation / lazily evaluate / memoization / memo / cache / caching implementation with a `Cacher` struct](./02-memoization-with-struct/workout_generator/src/)
+[Lazy evaluation / lazily evaluate / memoization / memo / cache / caching implementation with a `Cacher` struct / `Fn` trait](./02-memoization-with-struct/workout_generator/src/)
