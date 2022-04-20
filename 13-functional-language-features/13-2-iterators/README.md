@@ -24,3 +24,23 @@ for val in v1_iter {
 ```
 
 ## The `Iterator` trait and the `next` method
+
+Iterators implement a trait named `Iterator` that is defined in the standard library:
+
+```rust
+pub trait Iterator {
+  // new syntax (A): `type Item`
+  type Item;
+
+  // new syntax (A): `Self::Item`
+  fn next(&mut self) -> Option<Self::Item>;
+
+  // methods with default implementations elided
+}
+```
+
+`new syntax (A)` defines an associated type with this trait:
+
+- implementing the `Iterator` trait requires an `Item` type to be defined
+- the `Item` type is used in the return type of the `next` method
+- the `Item` type will be the type returned from the iterator
