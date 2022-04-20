@@ -4,4 +4,4 @@
 
 Referenced by:
 
-[The `Iterator` trait and the `next` method](../../13-functional-language-features/13-2-iterators/README.md/#the-iterator-trait-and-the-next-method)
+- [The `Iterator` trait and the `next` method](../../13-functional-language-features/13-2-iterators/README.md/#the-iterator-trait-and-the-next-method)
