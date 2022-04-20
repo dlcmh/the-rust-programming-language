@@ -39,7 +39,7 @@ pub trait Iterator {
 }
 ```
 
-`new syntax (A)` defines an associated type with this trait:
+`new syntax (A)` defines an [associated type](../../19-advanced-features/19-2-advanced-traits/README.md/#specifying-placeholder-types-in-trait-definitions-with-associated-types) with this trait:
 
 - implementing the `Iterator` trait requires an `Item` type to be defined
 - the `Item` type is used in the return type of the `next` method
