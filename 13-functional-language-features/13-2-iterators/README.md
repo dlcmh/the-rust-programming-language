@@ -39,7 +39,7 @@ pub trait Iterator {
 }
 ```
 
-`new syntax (A)` defines an [associated type](../../19-advanced-features/19-2-advanced-traits/README.md/#specifying-placeholder-types-in-trait-definitions-with-associated-types) with this trait:
+**`new syntax (A)`** defines an [associated type](../../19-advanced-features/19-2-advanced-traits/README.md/#specifying-placeholder-types-in-trait-definitions-with-associated-types) with this trait:
 
 - implementing the `Iterator` trait requires an `Item` type to be defined
 - the `Item` type is used in the return type of the `next` method
@@ -69,10 +69,26 @@ fn iterator_demonstration() {
   assert_eq!(v1_iter.next(), Some(&2));
   assert_eq!(v1_iter.next(), Some(&3));
   assert_eq!(v1_iter.next(), None);
+
+  // Note (C) `into_iter`
+  let v1 = vec![1, 2, 3];
+  let mut v1_iter = v1.into_iter();
+  assert_eq!(v1_iter.next(), Some(1));
+  assert_eq!(v1_iter.next(), Some(2));
+  assert_eq!(v1_iter.next(), Some(3));
+  assert_eq!(v1_iter.next(), None);
+
+  // Note (D) `iter_mut`
+  let mut v1 = vec![1, 2, 3];
+  let mut v1_iter = v1.iter_mut();
+  assert_eq!(v1_iter.next(), Some(&mut 1));
+  assert_eq!(v1_iter.next(), Some(&mut 2));
+  assert_eq!(v1_iter.next(), Some(&mut 3));
+  assert_eq!(v1_iter.next(), None);
 }
 ```
 
-Note (A): Iterator `v1_iter` needs to be made mutable:
+**Note (A)**: Iterator `v1_iter` needs to be made mutable:
 
 - calling the `next` method changes the internal state used by the iterator:
   - the internal state is used to keep track of where the iterator is in the sequence
@@ -82,9 +98,9 @@ Note (A): Iterator `v1_iter` needs to be made mutable:
 - `v1_iter` needn't be made mutable when used in a `for` loop because:
   - the loop takes ownership of `v1_iter` and makes it mutable behind the scenes
 
-Note (B): Values obtained from calls to `next`:
+**Note (B)**: Values obtained from calls to `next`:
 
 - are immutable references to the values in the vector `v1`
 - the `iter` method in `v1.iter()` produces an iterator over immutable references:
-  - to create an iterator that takes ownership of `v1` and returns owned values, use `into_iter`
-  - to create an iterator over mutable references, use `iter_mut`
+  - **Note (C)**: to create an iterator that takes ownership of `v1` and returns owned values, use `into_iter`
+  - **Note (D)**: to create an iterator over mutable references, use `iter_mut`
