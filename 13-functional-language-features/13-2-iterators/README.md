@@ -44,3 +44,47 @@ pub trait Iterator {
 - implementing the `Iterator` trait requires an `Item` type to be defined
 - the `Item` type is used in the return type of the `next` method
 - the `Item` type will be the type returned from the iterator
+
+Implementors of the `Iterator` trait must define one method, the `next` method:
+
+- which returns one item of the iterator at a time wrapped in `Some`,
+- and, when the iteration is over, returns `None`
+
+The `next` method can be called on iterators directly:
+
+```rust
+#[test]
+fn iterator_demonstration() {
+  let v1 = vec![1, 2, 3];
+
+  // Note (A)
+  // v1_iter must be mutable, otherwise error on `v1_iter.next()`:
+  //   cannot borrow `v1_iter` as mutable, as it is not declared as mutable
+  let mut v1_iter = v1.iter();
+
+  // Note (B)
+  // `Some(&1)`, otherwise error:
+  //   expected `&{integer}`, found integer
+  assert_eq!(v1_iter.next(), Some(&1));
+  assert_eq!(v1_iter.next(), Some(&2));
+  assert_eq!(v1_iter.next(), Some(&3));
+  assert_eq!(v1_iter.next(), None);
+}
+```
+
+Note (A): Iterator `v1_iter` needs to be made mutable:
+
+- calling the `next` method changes the internal state used by the iterator:
+  - the internal state is used to keep track of where the iterator is in the sequence
+- calling `next`:
+  - consumes, or uses up, the iterator
+  - eats up an iterm from the iterator
+- `v1_iter` needn't be made mutable when used in a `for` loop because:
+  - the loop takes ownership of `v1_iter` and makes it mutable behind the scenes
+
+Note (B): Values obtained from calls to `next`:
+
+- are immutable references to the values in the vector `v1`
+- the `iter` method in `v1.iter()` produces an iterator over immutable references:
+  - to create an iterator that takes ownership of `v1` and returns owned values, use `into_iter`
+  - to create an iterator over mutable references, use `iter_mut`
