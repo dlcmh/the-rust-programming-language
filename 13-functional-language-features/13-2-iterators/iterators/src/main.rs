@@ -6,8 +6,9 @@ fn main() {
     assert_eq!(v_iter.next(), Some(&3));
     assert_eq!(v_iter.next(), None);
 
-    let v = vec![1, 2, 3];
-    let mut v_iter = v.into_iter();
+    let v1 = vec![1, 2, 3];
+    let mut v_iter = v1.into_iter();
+    println!("{:?}", v1);
     assert_eq!(v_iter.next(), Some(1));
     assert_eq!(v_iter.next(), Some(2));
     assert_eq!(v_iter.next(), Some(3));
