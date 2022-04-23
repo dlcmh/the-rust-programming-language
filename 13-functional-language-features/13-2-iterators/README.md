@@ -106,5 +106,5 @@ fn iterator_demonstration() {
 
 - are immutable references to the values in the vector `v1`
 - the `iter` method in `v1.iter()` produces an iterator over immutable references:
-  - **Note (C)**: to create an iterator that takes ownership of `v1` and returns owned values, use `into_iter`
-  - **Note (D)**: to create an iterator over mutable references, use `iter_mut`
+  - **Note (C)**: `into_iter` - creates an iterator that takes ownership of `v1` and returns owned values
+  - **Note (D)**: `iter_mut` - creates an iterator over mutable references
